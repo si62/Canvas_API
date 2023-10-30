@@ -1,0 +1,36 @@
+{
+  "Connection": {
+    "BaseURL": "https://canvas.mpu.edu.mo/api/v1/",
+    "TimeoutMinutes": 5,
+    "Token": ""
+  },
+  "API": {
+    "Courses": {
+      "List": {
+        "Method": "GET",
+        "URL": "courses"
+      },
+      "Create": {
+        "Method": "POST",
+        "URL": "accounts/:account_id/courses"
+      }
+    },
+    "Enrollments": {
+      "List": {
+        "Method": "GET",
+        "URL": "courses/:course_id/enrollments"
+      },
+      "Create": {
+        "Method": "POST",
+        "Description": "Enroll a user",
+        "URL": "courses/:course_id/enrollments"
+      },
+      "Delete": {
+        "Method": "DELETE",
+        "URL": "courses/:course_id/enrollments/:id"
+      }
+
+    }
+
+  }
+}
