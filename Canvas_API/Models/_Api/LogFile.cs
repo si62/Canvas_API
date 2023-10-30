@@ -10,7 +10,15 @@ namespace Canvas_API.Models._Api
     {
         string file_name;
         public LogFile() {
-            file_name = Directory.GetCurrentDirectory() + @"\Logs\" + DateTime.Now.ToString("yyyyMMddHHmmss") + "_log.txt";
+            
+            string path = Directory.GetCurrentDirectory() + @"\Logs\"; // Your code goes here
+
+            bool exists = System.IO.Directory.Exists(path);
+
+            if (!exists)
+                System.IO.Directory.CreateDirectory(path);
+
+            file_name = path + DateTime.Now.ToString("yyyyMMddHHmmss") + "_log.txt";
             if (!File.Exists(file_name))
             {
                 // Create a file to write to.
